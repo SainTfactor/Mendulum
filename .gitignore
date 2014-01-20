@@ -58,7 +58,6 @@ build/
 *_p.c
 *.ilk
 *.meta
-*.obj
 *.pch
 *.pdb
 *.pgc
@@ -213,3 +212,21 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#############
+## Unity
+#############
+
+# Unity3D .gitignore file.
+.DS_Store
+Library/FailedAssetImports.txt
+Library/ScriptAssemblies
+Library/cache
+Library/previews
+Temp/*
+obj
+*.csproj
+*.pidb
+*.sln
+*.userprefs
+*.unityproj
