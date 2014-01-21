@@ -50,9 +50,10 @@ public class GameScript : MonoBehaviour {
 
 				Debug.Log(areaClicked);
 
-				if(areaClicked.x > -3.9f && areaClicked.x < -1.2f && areaClicked.y > 0.2f && areaClicked.y < 2.4f){
-					Debug.Log("clicked");
-
+				if(areaClicked.x > 3.1f && areaClicked.x < 5.4f && areaClicked.y > 0.1f && areaClicked.y < 2.5f){
+					Debug.Log ("before: " + go.transform.position);
+					go.GetComponent<PlantScript>().updateFocus(new Vector3(0.685f, 0.616f, 0.1f));
+					Debug.Log ("after: " + go.transform.position);
 				}
 			}
 		}

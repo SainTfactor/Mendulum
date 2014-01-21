@@ -17,7 +17,7 @@ public class PlantScript : MonoBehaviour {
 	float currentjitterY = 0.0f;
 	bool jitterX = false;
 	bool jitterY = false;
-	Vector3 HoldPosition;
+	public Vector3 HoldPosition;
 	//public 
 
 
@@ -69,6 +69,13 @@ public class PlantScript : MonoBehaviour {
 		}
 	}
 
+	public void updateFocus(Vector3 v)
+	{
+		HoldPosition = v;
+		gameObject.transform.position = v;
+		hasFocus = false;
+	}
+
 	void OnMouseDown()
 	{		
 		if(!hasFocus)
@@ -81,6 +88,7 @@ public class PlantScript : MonoBehaviour {
 			hasFocus = false;
 			gameObject.transform.position = HoldPosition;
 		}
+
 	}
 
 
