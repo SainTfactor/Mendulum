@@ -15,14 +15,14 @@ public class GameScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Vector3 v = new Vector3(0.72f, 0.48f);
+		Vector3 v = new Vector3(0.72f, 0.48f, 0.1f);
 		GameObject go = Instantiate(PlantOO,v,Quaternion.identity) as GameObject;
 		go.GetComponent<PlantScript>().isInBasket = true;
 		go.GetComponent<PlantScript>().gene1 = true;
 		go.GetComponent<PlantScript>().gene2 = true;
 		plants.Add(go);
 
-		Vector3 v2 = new Vector3(0.81f, 0.48f);
+		Vector3 v2 = new Vector3(0.81f, 0.48f, 0.1f);
 		GameObject go2 = Instantiate(PlantOo,v2,Quaternion.identity) as GameObject;
 		go2.GetComponent<PlantScript>().isInBasket = true;
 		go2.GetComponent<PlantScript>().gene1 = true;
