@@ -6,8 +6,7 @@ public class PlantScript : MonoBehaviour {
 	//Variables
 	public bool gene1 = false;
 	public bool gene2 = false;
-	
-	public bool isInBasket = false;
+
 	public bool isTopPsquare = false;
 	public bool isSidePsquare = false;
 
@@ -18,6 +17,8 @@ public class PlantScript : MonoBehaviour {
 	bool jitterX = false;
 	bool jitterY = false;
 	public Vector3 HoldPosition;
+
+	public int currentPosition = -1;
 	//public 
 
 
