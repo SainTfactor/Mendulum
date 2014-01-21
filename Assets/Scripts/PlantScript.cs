@@ -12,7 +12,7 @@ public class PlantScript : MonoBehaviour {
 	public bool isSidePsquare = false;
 
 	public bool hasFocus = false;	
-	float jitter = 0.1f;
+	float jitter = 0.002f;
 	float currentjitterX = 0.0f;
 	float currentjitterY = 0.0f;
 	bool jitterX = false;
@@ -31,7 +31,7 @@ public class PlantScript : MonoBehaviour {
 
 		if(jitterX) {
 			if(currentjitterX < jitter * 2){
-				currentjitterX += 0.005f;
+				currentjitterX += 0.0005f;
 			}
 			else {
 				jitterX = false;
@@ -39,7 +39,7 @@ public class PlantScript : MonoBehaviour {
 		}
 		else {
 			if (currentjitterX > -(jitter * 2)) {
-				currentjitterX -= 0.005f;
+				currentjitterX -= 0.0005f;
 			}
 			else {
 				jitterX = true;
@@ -65,7 +65,7 @@ public class PlantScript : MonoBehaviour {
 		}
 
 		if(hasFocus){
-			gameObject.transform.position += new Vector3(currentjitterX, currentjitterY);
+			gameObject.transform.position = HoldPosition + new Vector3(currentjitterX, currentjitterY);
 		}
 	}
 
@@ -79,6 +79,7 @@ public class PlantScript : MonoBehaviour {
 		else
 		{
 			hasFocus = false;
+			gameObject.transform.position = HoldPosition;
 		}
 	}
 
