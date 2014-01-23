@@ -46,9 +46,9 @@ public class GameScript : MonoBehaviour {
 
 			if(go != null)
 			{
-				Vector3 areaClicked = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y));
-				
-				if(areaClicked.x > -2.6f && areaClicked.x < -0.4f && areaClicked.y > 0.4f && areaClicked.y < 2.7f && plants[0] == null){
+				Vector3 areaClicked = Camera.main.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+				Debug.Log(areaClicked.x + ", " + areaClicked.y);
+				if(areaClicked.x > .3622f && areaClicked.x < .478f && areaClicked.y > .5352f && areaClicked.y < .7727f && plants[0] == null){
 					go.GetComponent<PlantScript>().updateFocus(new Vector3(0.418f, 0.635f, 0.1f));
 					plants[0] = go;
 					plants[go.GetComponent<PlantScript>().currentPosition] = null;
@@ -61,7 +61,7 @@ public class GameScript : MonoBehaviour {
 						Application.LoadLevel(1);
 					}
 				}
-				if(areaClicked.x > -5.0f && areaClicked.x < -2.8f && areaClicked.y > -2.1f && areaClicked.y < 0.2f && plants[1] == null){
+				if(areaClicked.x > .2377f && areaClicked.x < .3536f && areaClicked.y > .2875f && areaClicked.y < .5227f && plants[1] == null){
 					go.GetComponent<PlantScript>().updateFocus(new Vector3(0.295f, 0.39f, 0.1f));
 					plants[1] = go;
 					plants[go.GetComponent<PlantScript>().currentPosition] = null;
@@ -74,7 +74,7 @@ public class GameScript : MonoBehaviour {
 						Application.LoadLevel(1);
 					}
 				}
-				if(areaClicked.x > 2.5f && areaClicked.x < 4.5f && areaClicked.y > 0.1f && areaClicked.y < 2.5f && plants[2] == null){
+				if(areaClicked.x > .6327f && areaClicked.x < .7393f && areaClicked.y > 0.5f && areaClicked.y < .7534f && plants[2] == null){
 					go.GetComponent<PlantScript>().updateFocus(new Vector3(0.685f, 0.616f, 0.1f));
 					plants[2] = go;
 					plants[go.GetComponent<PlantScript>().currentPosition] = null;
@@ -87,7 +87,7 @@ public class GameScript : MonoBehaviour {
 						Application.LoadLevel(1);
 					}
 				}
-				if(areaClicked.x > 4.7f && areaClicked.x < 6.7f && areaClicked.y > 0.1f && areaClicked.y < 2.5f && plants[3] == null){
+				if(areaClicked.x > .7488f && areaClicked.x < .8536f && areaClicked.y > 0.5f && areaClicked.y < .7534f && plants[3] == null){
 					go.GetComponent<PlantScript>().updateFocus(new Vector3(0.8f, 0.616f, 0.1f));
 					plants[3] = go;
 					plants[go.GetComponent<PlantScript>().currentPosition] = null;
@@ -100,7 +100,7 @@ public class GameScript : MonoBehaviour {
 						Application.LoadLevel(1);
 					}
 				}
-				if(areaClicked.x > 6.9f && areaClicked.x < 8.9f && areaClicked.y > 0.1f && areaClicked.y < 2.5f && plants[4] == null){
+				if(areaClicked.x > .8619f && areaClicked.x < .9679f && areaClicked.y > 0.5f && areaClicked.y < .7534f && plants[4] == null){
 					go.GetComponent<PlantScript>().updateFocus(new Vector3(0.915f, 0.616f, 0.1f));
 					plants[4] = go;
 					plants[go.GetComponent<PlantScript>().currentPosition] = null;
@@ -113,7 +113,7 @@ public class GameScript : MonoBehaviour {
 						Application.LoadLevel(1);
 					}
 				}
-				if(areaClicked.x > 2.5f && areaClicked.x < 4.5f && areaClicked.y > -2.6f && areaClicked.y < -0.1f && plants[5] == null){
+				if(areaClicked.x > .6327f && areaClicked.x < .7393f && areaClicked.y > .2443f && areaClicked.y < .4897f && plants[5] == null){
 					go.GetComponent<PlantScript>().updateFocus(new Vector3(0.685f, 0.355f, 0.1f));
 					plants[5] = go;
 					plants[go.GetComponent<PlantScript>().currentPosition] = null;
@@ -126,7 +126,7 @@ public class GameScript : MonoBehaviour {
 						Application.LoadLevel(1);
 					}
 				}
-				if(areaClicked.x > 4.7f && areaClicked.x < 6.7f && areaClicked.y > -2.6f && areaClicked.y < -0.1f && plants[6] == null){
+				if(areaClicked.x > .7488f && areaClicked.x < .8536f && areaClicked.y > .2443f && areaClicked.y < .4897f && plants[6] == null){
 					go.GetComponent<PlantScript>().updateFocus(new Vector3(0.8f, 0.355f, 0.1f));
 					plants[6] = go;
 					plants[go.GetComponent<PlantScript>().currentPosition] = null;
@@ -139,7 +139,7 @@ public class GameScript : MonoBehaviour {
 						Application.LoadLevel(1);
 					}
 				}
-				if(areaClicked.x > 6.9f && areaClicked.x < 8.9f && areaClicked.y > -2.6f && areaClicked.y < -0.1f && plants[7] == null){
+				if(areaClicked.x > .8619f && areaClicked.x < .9679f && areaClicked.y > .2443f && areaClicked.y < .4897f && plants[7] == null){
 					go.GetComponent<PlantScript>().updateFocus(new Vector3(0.915f, 0.355f, 0.1f));
 					plants[7] = go;
 					plants[go.GetComponent<PlantScript>().currentPosition] = null;
@@ -225,7 +225,7 @@ public class GameScript : MonoBehaviour {
 		bool hasDominant = false;
 		bool hasMixed = false;
 		bool hasRecessive = false;
-		for (int i = 0; i < plants.Length - 4; i++) {
+		for (int i = 2; i < plants.Length - 4; i++) {
 			if (plants[i] != null) {
 				if (plants[i].GetComponent<PlantScript>().gene1) {
 					if (plants[i].GetComponent<PlantScript>().gene2) hasDominant = true;
